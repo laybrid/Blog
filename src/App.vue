@@ -1,6 +1,9 @@
 <template>
   <Nav></Nav>
-  <router-view />
+  <div class="py-10 px-7">
+    <router-view />
+  </div>
+
 </template>
 
 <script setup lang="ts">
