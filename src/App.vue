@@ -1,13 +1,14 @@
 <template>
   <Nav></Nav>
   <div class="py-10 px-7">
-    <router-view />
+    <router-view></router-view>
   </div>
 
 </template>
 
 <script setup lang="ts">
 import Nav from '@/components/Nav.vue';
+
 </script>
 
 <style>
