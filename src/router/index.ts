@@ -35,12 +35,11 @@ const dynamicRoutes = postsContext.keys().map(path => {
     component: () => postsContext(path)
   }
 })
-console.log(dynamicRoutes)
+
 // markdown文件全部注册为子路由
 routes[1].children = dynamicRoutes
 const router = createRouter({
   history: createWebHashHistory(),
-  // routes:[...routes,...dynamicRoutes],
   routes
 })
 

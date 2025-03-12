@@ -22,6 +22,7 @@ watch(() => route.path, () => {
 
 })
 provide('isShow',isShow)
+
 </script>
 
 <style>
