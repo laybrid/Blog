@@ -1,7 +1,7 @@
 <template>
     <div class="m-auto max-w-2xl ">
         <div v-show="isShow">
-            <h1 class="text-4xl mb-8">Blog</h1>
+          <h1 class="text-4xl mb-8">Blog</h1>
             <p class=" text-color-text-l italic mb-12">some articals about code</p>
             <div v-for="item in 5" :key="item" class="mb-10">
                 <div class="relative h-20">
@@ -43,3 +43,5 @@ interface articalsType {
     color: red;
 }
 </style>
+
+

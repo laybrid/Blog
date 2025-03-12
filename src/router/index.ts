@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import Blog from '../components/Blog.vue'
 import Projects from '../components/Projects.vue'
 
+
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
@@ -11,7 +12,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/blog',
     name: 'blog',
-    component: Blog
+    component: Blog,
   },
   {
     path: '/projects',
@@ -36,11 +37,11 @@ const dynamicRoutes = postsContext.keys().map(path => {
     component: () => postsContext(path)
   }
 })
+
 // markdown文件全部注册为子路由
 routes[1].children = dynamicRoutes
 const router = createRouter({
   history: createWebHashHistory(),
-  // routes:[...routes,...dynamicRoutes],
   routes
 })
 
