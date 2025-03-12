@@ -15,7 +15,7 @@
                 </div>
             </div>
         </div>
-        <div class="md-class">
+        <div class="markdown-body">
             <router-view v-show="!isShow"></router-view>
         </div>
     </div>
@@ -23,7 +23,7 @@
 </template>
 <script setup lang="ts">
 import { inject } from 'vue';
-const isShow = inject('isShow',true)
+const isShow = inject('isShow', true)
 
 
 interface articalsType {
@@ -39,7 +39,12 @@ interface articalsType {
 // ]
 </script>
 <style>
-.md-class h1,h2,h3{
-    color: red;
+.markdown-body {
+    background-color: #222 !important;
+}
+/* 缺少代码高亮的权宜之计 */
+.markdown-body pre {
+    background-color: #282c34 !important;
+    color: white !important;
 }
 </style>
