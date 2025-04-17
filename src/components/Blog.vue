@@ -3,15 +3,15 @@
         <div v-show="isShow">
           <h1 class="text-4xl mb-8">Blog</h1>
             <p class=" text-color-text-l italic mb-12">some articals about code</p>
-            <div v-for="item in 5" :key="item" class="mb-10">
+            <div v-for="item in 1" :key="item" class="mb-10">
                 <div class="relative h-20">
                     <span class="font-bold text-9xl absolute top-0 -left-12 opacity-5">2025</span>
                 </div>
-                <div class="text-color-text-ll">
-                    <p>git</p>
-                    <p>leetcode</p>
-                    <p>xss</p>
-                    <router-link to="/blog/a">vueuse</router-link>
+                <div class="text-color-text-ll flex flex-col">
+                    <router-link
+                    class="m-2 z-10 text-lg hover:text-color-theme "
+                    :to="'/blog/' + item" 
+                    v-for="item,index in Blogs" :key="index">{{ item }}</router-link>
                 </div>
             </div>
         </div>
@@ -23,9 +23,12 @@
 </template>
 <script setup lang="ts">
 import { inject } from 'vue';
+import { useRouter } from 'vue-router';
 const isShow = inject('isShow', true)
 
-
+const router = useRouter()
+const Blogs = router.getRoutes().filter(i => i.path.startsWith('/blog/')).map(i => i.path.split('/')[2])
+console.log(Blogs)
 interface articalsType {
     title: string,
     yaer: string,
@@ -39,12 +42,5 @@ interface articalsType {
 // ]
 </script>
 <style>
-.markdown-body {
-    background-color: #222 !important;
-}
-/* 缺少代码高亮的权宜之计 */
-.markdown-body pre {
-    background-color: #282c34 !important;
-    color: white !important;
-}
+
 </style>
