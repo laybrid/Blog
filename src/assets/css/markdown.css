@@ -1,0 +1,22 @@
+.markdown-body img {
+    width: 100%;
+    max-height: 600px;
+    min-height: 30px;
+    margin: 8px 0;
+    border-radius: 0.5rem;
+  }
+  .markdown-body li {
+    list-style: disc;
+  }
+  .markdown-body a {
+    color: #ffcd32 !important;
+  }
+  .markdown-body p,li{
+    color: #BBBBBB !important;
+  }
+  .markdown-body strong {
+    color: #ddd;
+  }
+  .markdown-body h5,h6 {
+    font-size: 16px;
+  }

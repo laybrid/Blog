@@ -1,6 +1,6 @@
 ### createGlobalState（）
 
-<p style=color:red>在简单场景下更加简洁(相较于vuex provide/inject...)的实现全局状态管理。
+ 在简单场景下更加简洁(相较于vuex provide/inject...)的实现全局状态管理。
  ps:全局状态管理：就是不同vue实例之间共享 维护状态（数据）
 
 [文档](https://vueuse.org/shared/createGlobalState/)

@@ -59,4 +59,3 @@ commit方法也是对undo进行操作，执行commit方法之后 将变化值增
 ![image-20250308111006117](../assets/blog-img/\image-20250308111006117.png)
 
 在watchIgnorable中传入source数据源进行观察，然后将之前的commit方法传入，数据源发生更新时自动调用commit方法，完成自动追踪ref更新历史的操作
-~~~
