@@ -8,7 +8,7 @@
         <div class="flex gap-5 items-center">
             <div class="text-color-text-ll hover:text-color-theme cursor-pointer" v-for="item in seeting" :key="item"
                 @click="onClick(item)">{{ item }}</div>
-            <button @click="changeLanguage" class="text-color-text-ll hover:text-color-theme">{{ language }}</button>
+            <!-- <button @click="changeLanguage" class="text-color-text-ll hover:text-color-theme">{{ language }}</button> -->
             <a href="https://github.com/laybrid" target="_blank">
                 <div class="icon icon2" ></div>
             </a>

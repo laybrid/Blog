@@ -5,7 +5,7 @@
             <p class=" text-color-text-l italic mb-12">some articals about code</p>
             <div v-for="item in 1" :key="item" class="mb-10">
                 <div class="relative h-20">
-                    <span class="font-bold text-9xl absolute top-0 -left-12 opacity-5">2025</span>
+                    <span class="font-bold text-9xl absolute top-0 -left-12 opacity-5 pointer-events-none">2025</span>
                 </div>
                 <div class="text-color-text-ll flex flex-col">
                     <router-link
