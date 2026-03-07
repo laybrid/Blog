@@ -1,7 +1,5 @@
 <template>
-  <h1>123</h1>
+  <div>game video</div>
 </template>
 
 <script setup lang="ts"></script>
-
-<style></style>
