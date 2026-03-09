@@ -1,7 +1,8 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
 import Home from '../views/Home.vue'
-import Article from '../components/Article.vue'
+import List from '../components/List.vue'
 import About from '../components/About.vue'
+import WrapperPost from '@/components/WrapperPost.vue'
 import GameVideo from '../components/GameVideo.vue'
 
 const routes: Array<RouteRecordRaw> = [
@@ -12,8 +13,13 @@ const routes: Array<RouteRecordRaw> = [
     children: [
       {
         path: '',
-        name: 'article',
-        component: Article
+        name: 'list',
+        component: List
+      },
+      {
+        path: ':slug',
+        name: 'wrapperPost',
+        component: WrapperPost
       },
       {
         path: 'about',
