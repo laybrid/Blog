@@ -12,7 +12,7 @@
       class="max-md:hidden absolute top-3 right-3 bottom-3 rounded-xl bg-pink-100 w-11 cursor-pointer flex justify-center items-center"
       @click="jump"
     >
-      <ChevronRightIcon class="size-6 text-red-700"></ChevronRightIcon>
+      <ChevronRightIcon class="size-6 text-color-theme"></ChevronRightIcon>
     </div>
   </div>
 </template>
@@ -37,7 +37,6 @@ const jump = () => {
 <style scoped>
 .card {
   position: relative;
-  background-color: white;
   border-radius: 16px;
   padding: 10px;
   overflow: hidden;
@@ -45,11 +44,11 @@ const jump = () => {
 
 .title::before {
   position: absolute;
-  top: 3px;
+  top: 5px;
   left: -10px;
   content: '';
   width: 4px;
   height: 16px;
-  background-color: pink;
+  background-color: #fff;
 }
 </style>

@@ -1,14 +1,16 @@
 <template>
-  <div>
-    <h1>123123</h1>
-    <ul>
+  <div class="container">
+    <h1 class="text-[30px] font-bold relative text-color-text-r">
+      {{ meta?.title }}
+    </h1>
+    <ul
+      class="flex gap-3 text-[#e28247] text-sm mt-2 border-b-[1px] border-dashed"
+    >
       <li>{{ meta?.date }}</li>
-      <li>{{ meta?.description }}</li>
       <li>{{ meta?.duration }}</li>
-      <li>{{ meta?.lang }}</li>
-      <li>{{ meta?.title }}</li>
+      <li>{{ meta?.word }}</li>
     </ul>
-    <div v-html="content"></div>
+    <div v-html="content" class="prose"></div>
   </div>
 </template>
 
@@ -49,3 +51,14 @@ watch(
   }
 )
 </script>
+
+<style scoped>
+@import url('../assets/css/prose.css');
+
+.container {
+  background-color: var(--background-color);
+  border-radius: 16px;
+  padding: 36px;
+  overflow: hidden;
+}
+</style>

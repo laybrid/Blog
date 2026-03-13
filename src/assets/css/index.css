@@ -6,20 +6,16 @@
   border-radius: 8px;
 }
 .btn-plain:hover {
-  background-color: #fdeae0;
-  color: red;
-}
-.btn-plain:active {
-  background-color: #fef7f3;
+  border: 1px solid #ffcd32;
 }
 .btn {
-  color: red;
-  background-color: #fdeae0;
+  color: #ddd;
   cursor: pointer;
+  border: 1px solid #fff;
 }
 .btn:hover {
-    background-color: #fbd5c1;
+  border: 1px solid #ffcd32;
 }
 .btn:active {
-    background-color: #f9bf9f;
+  border: 1px solid #ffcd32;
 }

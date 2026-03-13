@@ -1,17 +1,17 @@
 <template>
-  <div class="h-full bg-pink">
+  <div class="h-full text-color-text">
     <Card>
       <template #default>
         <div class="w-full flex justify-center">
           <img src="../assets/logo.png" alt="" />
         </div>
         <div class="text-center">
-          <p>Laybrid</p>
-          <p class="my-2">请和我一起前往世界的尽头</p>
-          <div class="flex justify-center items-center gap-1">
+          <p class="text-color-text-r">Laybrid</p>
+          <p class="my-2 text-color-text-d">请和我一起前往世界的尽头</p>
+          <div class="flex justify-center items-center gap-4">
             <a
               href="https://github.com/laybrid"
-              class="btn p-2 transition duration-300 ease-in-out"
+              class="btn p-2 transition duration-300 ease-in-out active:scale-95"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -28,7 +28,7 @@
             </a>
             <a
               href="https://steamcommunity.com/profiles/76561199758756730/"
-              class="btn p-2 transition duration-300 ease-in-out"
+              class="btn p-2 transition duration-300 ease-in-out active:scale-95"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -49,9 +49,9 @@
     </Card>
     <Card class="mt-4" title="标签">
       <template #default>
-        <div class="flex gap-2 flex-wrap">
+        <div class="flex gap-4 flex-wrap">
           <div
-            class="btn px-3 py-1 transition duration-300 ease-in-out"
+            class="btn px-3 py-1 transition duration-300 ease-in-out active:scale-95"
             v-for="item in 7"
             :key="item"
           >

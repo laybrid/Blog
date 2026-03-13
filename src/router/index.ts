@@ -18,7 +18,7 @@ const routes: Array<RouteRecordRaw> = [
       },
       {
         path: ':slug',
-        name: 'wrapperPost',
+        name: 'WrapperPost',
         component: WrapperPost
       },
       {

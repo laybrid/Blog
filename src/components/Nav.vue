@@ -1,14 +1,14 @@
 <template>
   <div
-    class="h-[72px] bg-white mb-3 rounded-xl flex px-4 items-center justify-between"
+    class="h-[72px] bg-white mb-3 rounded-xl flex px-4 items-center justify-between text-color-theme"
   >
     <router-link
       class="flex items-center px-3 py-2 active:scale-95 btn-plain transition duration-300 ease-in-out"
       to="/"
     >
       <template #default>
-        <HomeIcon class="size-8 text-pink-100 mr-2"></HomeIcon>
-        <span>Chat</span>
+        <HomeIcon class="size-8 text-color-theme mr-2"></HomeIcon>
+        <span class="text-color-theme font-bold">Chat</span>
       </template>
     </router-link>
     <div class="flex items-center">
@@ -23,7 +23,7 @@
         >关于</router-link
       >
     </div>
-    <div class="other">
+    <div class="other opacity-0">
       <SunIcon class="size-8"></SunIcon>
     </div>
   </div>

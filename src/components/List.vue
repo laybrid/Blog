@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="text-color-text">
     <Card v-for="item in 4" :key="item" is-jump path="/about" class="mb-4">
       <template #head>
         <h1 class="text-lg">
