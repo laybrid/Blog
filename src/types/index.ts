@@ -6,4 +6,5 @@ export interface MDMETA {
   description: string
   tag: string
   word: string
+  path?: string
 }

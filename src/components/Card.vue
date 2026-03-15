@@ -9,10 +9,12 @@
     <slot></slot>
     <div
       v-if="isJump"
-      class="max-md:hidden absolute top-3 right-3 bottom-3 rounded-xl bg-pink-100 w-11 cursor-pointer flex justify-center items-center"
+      class="max-md:hidden absolute top-3 right-3 bottom-3 rounded-xl bg-color-bg w-11 cursor-pointer flex justify-center items-center"
       @click="jump"
     >
-      <ChevronRightIcon class="size-6 text-color-theme"></ChevronRightIcon>
+      <ChevronRightIcon
+        class="size-15 text-color-theme-d hover:text-color-theme"
+      ></ChevronRightIcon>
     </div>
   </div>
 </template>
@@ -44,11 +46,11 @@ const jump = () => {
 
 .title::before {
   position: absolute;
-  top: 5px;
+  top: 10px;
   left: -10px;
   content: '';
   width: 4px;
-  height: 16px;
-  background-color: #fff;
+  height: 20px;
+  background-color: #ffcd32;
 }
 </style>

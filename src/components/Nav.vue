@@ -15,12 +15,12 @@
       <router-link
         to="/"
         class="px-5 py-2 active:scale-95 btn-plain font-bold transition duration-300 ease-in-out"
-        >主页</router-link
+        >Blog</router-link
       >
       <router-link
         to="/about"
         class="px-5 py-2 active:scale-95 btn-plain font-bold transition duration-300 ease-in-out"
-        >关于</router-link
+        >About</router-link
       >
     </div>
     <div class="other opacity-0">

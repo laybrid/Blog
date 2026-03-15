@@ -5,7 +5,7 @@ lang: en
 duration: 15min
 description: The first md of the blog
 tag: test
-word: 1200字
+word: 1200
 ---
 
 ## test h2 title

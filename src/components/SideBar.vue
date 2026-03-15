@@ -3,9 +3,9 @@
     <Card>
       <template #default>
         <div class="w-full flex justify-center">
-          <img src="../assets/logo.png" alt="" />
+          <img src="../assets/blog-img/avatars.jpg" alt="" />
         </div>
-        <div class="text-center">
+        <div class="text-center mt-3">
           <p class="text-color-text-r">Laybrid</p>
           <p class="my-2 text-color-text-d">请和我一起前往世界的尽头</p>
           <div class="flex justify-center items-center gap-4">
