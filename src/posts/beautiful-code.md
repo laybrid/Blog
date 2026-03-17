@@ -7,7 +7,7 @@ description: Eslint + prettier 最佳实践
 tag: 代码规范
 word: 2383
 ---
-
+[[toc]]
 作为一个有代码洁癖的人，写出高质量的整洁代码对我来说真的很重要。一段难看的代码会让人不想去看，即使是自己写的代码。对于一个大的团队项目来说，如果没有一个好的代码约束，代码的阅读性是灾难的，风格迥异的代码会让人失去耐心.....
 
 于是，我花了两天时间来研究了一下如何利用工程手段（eslint + prettier）来约束项目的代码，统一代码风格。现在来分享一下我的成果。
@@ -105,7 +105,7 @@ module.exports = {
 }
 ~~~
 
-#### 配置eslint和prettier的配置文件
+#### 配置eslint和prettier
 
 > ！这里eslint和prettier的配置文件一定要分开写，如果将prettier的配置文件内嵌到eslint的文件中，prettier插件会找不到位置
 

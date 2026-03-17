@@ -31,11 +31,79 @@
   line-height: 1;
   padding: 6px 8px;
   border-radius: 8px;
-  background: rgba(0,0,0,.35);
+  background: rgba(0, 0, 0, 0.35);
   color: #fff;
-  border: 1px solid rgba(255,255,255,.15);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   cursor: pointer;
 }
 .code-copy-btn:hover {
-  background: rgba(0,0,0,.5);
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  position: relative;
+}
+.prose .header-anchor {
+  opacity: 0;
+  margin-right: 0.5rem;
+  text-decoration: none;
+  border-bottom: none;
+  color: #ffcd32;
+}
+.prose .header-anchor:hover {
+  border-bottom: none;
+}
+.prose h1:hover .header-anchor,
+.prose h2:hover .header-anchor,
+.prose h3:hover .header-anchor,
+.prose h4:hover .header-anchor,
+.prose h5:hover .header-anchor,
+.prose h6:hover .header-anchor {
+  opacity: 1;
+}
+
+/* 右侧固定 TOC：桌面端显示，移动端隐藏 */
+.table-of-contents {
+  position: fixed;
+  top: 84px;
+  right: calc((100vw - 1800px) / 2);
+  width: 260px;
+  max-height: calc(100% - 160px);
+  overflow: auto;
+  scrollbar-width: none;
+  padding: 12px 12px;
+  font-size: 14px;
+
+}
+.prose .table-of-contents ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+.prose .table-of-contents ul ::before {
+  display: none;
+}
+.prose .table-of-contents ul li {
+  padding-left: 15px;
+}
+.table-of-contents a {
+  display: block;
+  padding: 6px 8px;
+  color: #bbb;
+  text-decoration: none;
+  border-bottom: none;
+}
+.table-of-contents a:hover {
+  color: #ffcd32;
+  border-bottom: none;
+}
+@media (max-width: 1550px) {
+  .table-of-contents {
+    display: none;
+  }
 }
