@@ -1,7 +1,7 @@
 <template>
   <div class="max-w-[1200px] mx-auto">
     <Nav></Nav>
-    <div class="flex flex-col lg:gap-4 lg:flex-row">
+    <div class="flex flex-col lg:gap-5 lg:flex-row">
       <SideBar class="flex-1 lg:max-w-[280px]"></SideBar>
       <router-view class="flex-1"></router-view>
     </div>

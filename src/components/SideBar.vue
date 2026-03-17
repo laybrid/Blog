@@ -47,15 +47,16 @@
         </div>
       </template>
     </Card>
-    <Card class="mt-4" title="标签">
+    <Card class="mt-4">
       <template #default>
+        <div class="relative ml-3 my-3 md:w-[calc(100%-70px)] title">标签</div>
         <div class="flex gap-4 flex-wrap">
           <div
             class="btn px-3 py-1 transition duration-300 ease-in-out active:scale-95"
-            v-for="item in 7"
+            v-for="item in tagArray"
             :key="item"
           >
-            git
+            {{ item }}
           </div>
         </div>
       </template>
@@ -64,5 +65,22 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
+import useMdFiles from '@/assets/utils/useMdFile'
 import Card from './Card.vue'
+
+const { getMdFilesTag } = useMdFiles()
+const tagArray = ref(getMdFilesTag())
 </script>
+
+<style scoped>
+.title::before {
+  position: absolute;
+  top: 5px;
+  left: -10px;
+  content: '';
+  width: 4px;
+  height: 13px;
+  background-color: #ffcd32;
+}
+</style>

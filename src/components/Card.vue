@@ -20,6 +20,7 @@
 </template>
 
 <script setup lang="ts">
+// ts 序列
 import { defineProps } from 'vue'
 import { useRouter } from 'vue-router'
 import { ChevronRightIcon } from '@heroicons/vue/24/solid'
@@ -47,7 +48,7 @@ const jump = () => {
 .title::before {
   position: absolute;
   top: 10px;
-  left: -10px;
+  left: -8px;
   content: '';
   width: 4px;
   height: 20px;

@@ -1,7 +1,7 @@
 export default function useMdFiles() {
   // 读取posts文件夹里的文件
   const postsContext = require.context(
-    '../../posts', // 目录路径
+    '@/posts', // 目录路径
     true, // 包含子目录
     /\.md$/ // 文件匹配正则
   )
@@ -35,8 +35,15 @@ export default function useMdFiles() {
       ...meta
     }
   }
+
+  function getMdFilesTag() {
+    const arrTag = getMdFilesMeta().map(item => item.tag)
+    return [...new Set(arrTag)]
+  }
+
   return {
     getMdFilesMeta,
-    getSingleMdFileMeta
+    getSingleMdFileMeta,
+    getMdFilesTag
   }
 }

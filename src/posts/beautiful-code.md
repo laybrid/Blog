@@ -191,7 +191,7 @@ module.exports = {
 
 安装完prettier插件之后，只需要一个配置即可
 
-![image-20260313184509540](C:\Users\zed\AppData\Roaming\Typora\typora-user-images\image-20260313184509540.png)
+![beautiful-code-1](../assets/blog-img/beautiful-code-1.png)
 
 设置prettier的config path， 目的是告诉插件你的prettier配置文件在哪
 
