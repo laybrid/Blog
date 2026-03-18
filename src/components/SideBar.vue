@@ -3,7 +3,11 @@
     <Card>
       <template #default>
         <div class="w-full flex justify-center">
-          <img src="../assets/blog-img/avatars.jpg" alt="" />
+          <img
+            src="../assets/blog-img/avatars.jpg"
+            alt=""
+            class="max-w-[280px]"
+          />
         </div>
         <div class="text-center mt-3">
           <p class="text-color-text-r">Laybrid</p>
@@ -47,7 +51,7 @@
         </div>
       </template>
     </Card>
-    <Card class="mt-4">
+    <Card class="my-4">
       <template #default>
         <div class="relative ml-3 my-3 md:w-[calc(100%-70px)] title">标签</div>
         <div class="flex gap-4 flex-wrap">
