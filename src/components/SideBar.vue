@@ -11,7 +11,7 @@
         </div>
         <div class="text-center mt-3">
           <p class="text-color-text-r">Laybrid</p>
-          <p class="my-2 text-color-text-d">请和我一起前往世界的尽头</p>
+          <p class="my-2 text-color-text-d">探索虚拟世界</p>
           <div class="flex justify-center items-center gap-4">
             <a
               href="https://github.com/laybrid"
@@ -59,6 +59,7 @@
             class="btn px-3 py-1 transition duration-300 ease-in-out active:scale-95"
             v-for="item in tagArray"
             :key="item"
+            v-show="item != 'none'"
           >
             {{ item }}
           </div>

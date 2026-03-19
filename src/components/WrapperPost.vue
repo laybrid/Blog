@@ -59,7 +59,6 @@ watch(
 
 .container {
   background-color: var(--background-color);
-  border-radius: 16px;
   padding: 36px;
   overflow: hidden;
 }

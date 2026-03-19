@@ -6,6 +6,7 @@
       is-jump
       :path="item.path"
       class="mb-5"
+      v-show="item.tag != 'none'"
     >
       <template #head>
         <router-link
