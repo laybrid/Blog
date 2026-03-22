@@ -21,7 +21,6 @@
 
 <script setup lang="ts">
 // ts 序列
-import { defineProps } from 'vue'
 import { useRouter } from 'vue-router'
 import { ChevronRightIcon } from '@heroicons/vue/24/solid'
 const props = defineProps<{
