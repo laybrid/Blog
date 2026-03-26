@@ -6,12 +6,13 @@
   border-radius: 8px;
 }
 .btn-plain:hover {
-  border: 1px solid #ffcd32;
+  color: #e2e8f0;
 }
 .btn {
-  color: #ddd;
+  color: #e2e8f0;
   cursor: pointer;
-  border: 1px solid #fff;
+  border: 1px solid #314158;
+  background-color: #0f172b;
 }
 .btn:hover {
   border: 1px solid #ffcd32;
@@ -94,13 +95,16 @@
 .table-of-contents a {
   display: block;
   padding: 6px 8px;
-  color: #bbb;
+  color: #90a1b9;
   text-decoration: none;
   border-bottom: none;
 }
 .table-of-contents a:hover {
-  color: #ffcd32;
+  color: #e2e8f0;
   border-bottom: none;
+}
+.table-of-contents .active{
+  color: #e2e8f0;
 }
 @media (max-width: 1550px) {
   .table-of-contents {

@@ -2,10 +2,12 @@
   --prose-max-width: 90ch;
   --prose-width: min(var(--prose-max-width), 100%);
   --prose-margin: calc(calc(100vw - var(--prose-width)) / 2);
-  --fg: #bbb;
-  --fg-deep: #ddd;
+  --fg:  #90a1b9;
+  --fg-deep: #e2e8f0;
   --fg-deeper: #fff;
-  --background-color: #020618
+  --background-color: #020618;
+  --theme-color: #ffcd32;
+  --theme-color-d: rgba(255, 205, 49, 0.5)
 }
 
 .prose {
@@ -22,17 +24,16 @@
   margin-bottom: 1.2em;
 }
 .prose a {
-  color: var(--fg-deeper);
+  color: var(--theme-color);
   text-decoration: none;
   font-weight: 500;
-  border-bottom: 1px solid rgba(125, 125, 125, 0.3);
-  transition: border 0.3s ease-in-out;
+  transition: border 20s ease-in-out;
 }
 .prose a:hover {
-  border-bottom: 1px solid var(--fg);
+  border-bottom: 1px solid var(--theme-color);
 }
 .prose strong {
-  color: var(--fg-deep);
+  color: var(--theme-color-d);
   font-weight: 600;
 }
 .prose ol[type='A'] {
@@ -70,7 +71,7 @@
   content: counter(list-item, var(--list-counter-style, decimal)) '.';
   position: absolute;
   font-weight: 400;
-  color: #6b7280;
+  color: var(--fg-deep);
   left: 0;
 }
 .prose ul > li {
@@ -80,7 +81,7 @@
 .prose ul > li::before {
   content: '';
   position: absolute;
-  background-color: #d1d5db;
+  background-color: #314158;
   border-radius: 50%;
   width: 0.375em;
   height: 0.375em;
@@ -97,7 +98,7 @@
   font-style: italic;
   color: inherit;
   border-left-width: 0.25rem;
-  border-color: rgba(125, 125, 125, 0.3);
+  border-color:  #314158;
   quotes: '\201C' '\201D' '\2018' '\2019';
   margin-top: 1.6em;
   margin-bottom: 1.6em;
@@ -148,20 +149,19 @@
   margin-top: 0.8571429em;
 }
 .prose code {
-  --uno: font-mono;
   color: var(--fg-deep);
-  font-weight: 500;
-  font-size: 0.875em;
-  background-color: #aaa1;
-  border-radius: 0.25rem;
-  padding: 0.2em 0.3em;
-  margin: -0.2em 0;
+  cursor: pointer;
+  border: 1px solid #314158;
+  background-color: #0f172b;
+  border-radius: 8px;
+  padding: 4px 12px;
+  margin: 0 6px;
 }
 .prose a code {
   color: #111827;
 }
 .prose pre {
-  color: #e5e7eb;
+  color: var(--fg-deep);
   overflow-x: auto;
   font-size: 0.875em;
   line-height: 1.7142857;
@@ -172,6 +172,7 @@
   padding-right: 1.1428571em;
   padding-bottom: 0.8571429em;
   padding-left: 1.1428571em;
+  background-color: #0f172b;
 }
 .prose pre code {
   background-color: transparent;

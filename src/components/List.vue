@@ -1,5 +1,5 @@
 <template>
-  <div class="text-color-text">
+  <div class="text-color-text-d">
     <Card
       v-for="(item, index) in blogRoutes"
       :key="index"
@@ -10,7 +10,7 @@
     >
       <template #head>
         <router-link
-          class="text-[28px] hover:text-color-theme cursor-pointer ml-2"
+          class="text-[28px] hover:text-color-text-r cursor-pointer ml-2"
           :to="item.path as string"
         >
           {{ item.title }}
@@ -20,12 +20,12 @@
         <div class="pl-3 md:w-[calc(100%-70px)]">
           <div class="flex items-center gap-1">
             <div class="btn w-8 h-8 mr-1 pointer-events-none">#</div>
-            <div class="cursor-pointer hover:text-color-theme">
+            <div class="cursor-pointer hover:text-color-text-r text-color-text">
               {{ item.tag }}
             </div>
           </div>
           <p class="my-3 text-color-text-d">{{ item.description }}</p>
-          <p class="text-color-theme-d">
+          <p class="text-color-text">
             <span>{{ item.word }}字</span> <span class="mx-2">|</span>
             <span>{{ item.duration }}</span>
           </p>

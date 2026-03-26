@@ -3,7 +3,7 @@
     <h1 class="text-[30px] font-bold relative text-color-text-r title">
       {{ blogContent?.title }}
     </h1>
-    <ul class="flex gap-3 text-color-theme-d text-sm my-2">
+    <ul class="flex gap-3 text-color-text-d text-sm my-2">
       <!-- <li>{{ blogContent?.date }}</li> -->
       <li>{{ blogContent?.duration }}</li>
       <li>|</li>
@@ -19,10 +19,12 @@ import { nextTick, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import useMdFiles from '@/assets/utils/useMdFile'
 import useMdFileImg from '@/assets/utils/useMdFileImg'
+import useLinkColor from '@/assets/utils/useLinkColor'
 
 const route = useRoute()
 const { getSingleMdFileMeta } = useMdFiles()
 const { fixMarkdownImages } = useMdFileImg()
+const { match } = useLinkColor()
 
 const blogContent = ref()
 const containerEl = ref()
@@ -50,6 +52,13 @@ watch(
   },
   {
     immediate: true
+  }
+)
+watch(
+  () => route.hash,
+  () => {
+    const a = document.querySelectorAll('.table-of-contents a')
+    match(a)
   }
 )
 </script>

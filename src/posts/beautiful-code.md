@@ -114,8 +114,8 @@ module.exports = {
 然后在根目录创建index.js,作为包的入口文件，配置eslint并且将prettier引入
 
 ~~~js
+// index.js
 const prettierConfig = require('./prettier.config.cjs')
-
 module.exports = {
   root: true,
   env: {

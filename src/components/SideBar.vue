@@ -53,7 +53,11 @@
     </Card>
     <Card class="my-4">
       <template #default>
-        <div class="relative ml-3 my-3 md:w-[calc(100%-70px)] title">标签</div>
+        <div
+          class="relative ml-3 my-3 md:w-[calc(100%-70px)] title text-color-text-d"
+        >
+          标签
+        </div>
         <div class="flex gap-4 flex-wrap">
           <div
             class="btn px-3 py-1 transition duration-300 ease-in-out active:scale-95"
