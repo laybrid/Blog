@@ -20,7 +20,7 @@
 </template>
 
 <script setup lang="ts">
-// ts  序列
+// ts 序列
 import { useRouter } from 'vue-router'
 import { ChevronRightIcon } from '@heroicons/vue/24/solid'
 const props = defineProps<{
