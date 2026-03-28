@@ -10,12 +10,12 @@
       <li>{{ blogContent?.word }}字</li>
     </ul>
     <div class="border-b-[1px] border-dashed h-1 text-color-theme my-8"></div>
-    <div v-html="blogContent.html" class="prose"></div>
+    <div v-html="blogContent.html" class="prose" ref="prose"></div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { nextTick, ref, watch } from 'vue'
+import { nextTick, ref, watch, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 import useMdFiles from '@/assets/utils/useMdFile'
 import useMdFileImg from '@/assets/utils/useMdFileImg'
@@ -24,10 +24,11 @@ import useLinkColor from '@/assets/utils/useLinkColor'
 const route = useRoute()
 const { getSingleMdFileMeta } = useMdFiles()
 const { fixMarkdownImages } = useMdFileImg()
-const { match } = useLinkColor()
+const { clickMatch, scrollMatch } = useLinkColor()
 
 const blogContent = ref()
 const containerEl = ref()
+const prose = ref()
 let slug = route.params.slug || ''
 
 // copy btn
@@ -40,6 +41,12 @@ document.addEventListener('click', async e => {
   const old = btn.textContent
   btn.textContent = '√'
   window.setTimeout(() => (btn.textContent = old || '复制'), 1200)
+})
+
+onMounted(() => {
+  const a = prose.value.querySelectorAll('.table-of-contents a')
+  const h = prose.value.querySelectorAll('h2,h3,h4')
+  scrollMatch(a, h)
 })
 
 watch(
@@ -56,9 +63,14 @@ watch(
 )
 watch(
   () => route.hash,
-  () => {
+  async () => {
+    await nextTick()
     const a = document.querySelectorAll('.table-of-contents a')
-    match(a)
+    const h = document.querySelectorAll('.prose h2,h3,h4')
+    clickMatch(a)
+  },
+  {
+    immediate: true
   }
 )
 </script>

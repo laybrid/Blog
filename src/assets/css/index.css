@@ -104,10 +104,15 @@
   border-bottom: none;
 }
 .table-of-contents .active{
-  color: #e2e8f0;
+  color: #ffcd32;
 }
 @media (max-width: 1550px) {
   .table-of-contents {
     display: none;
   }
 }
+/* 修改被选中文字的背景颜色 */
+::selection {
+  background: #1b2642;
+}
+
