@@ -15,7 +15,7 @@
 </template>
 
 <script setup lang="ts">
-import { nextTick, ref, watch, onMounted } from 'vue'
+import { nextTick, ref, watch, onMounted, onUnmounted } from 'vue'
 import { useRoute } from 'vue-router'
 import useMdFiles from '@/assets/utils/useMdFile'
 import useMdFileImg from '@/assets/utils/useMdFileImg'
@@ -46,7 +46,12 @@ document.addEventListener('click', async e => {
 onMounted(() => {
   const a = prose.value.querySelectorAll('.table-of-contents a')
   const h = prose.value.querySelectorAll('h2,h3,h4')
-  scrollMatch(a, h)
+  window.addEventListener('scroll', () => scrollMatch(a, h))
+  window.addEventListener('resize', () => scrollMatch(a, h))
+})
+onUnmounted(() => {
+  window.removeEventListener('scroll', () => scrollMatch)
+  window.removeEventListener('resize', () => scrollMatch)
 })
 
 watch(

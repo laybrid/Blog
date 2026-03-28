@@ -1,60 +1,74 @@
 import { useRoute } from 'vue-router'
-import { onUnmounted } from 'vue'
+
+const headerOffset = 0
 
 export default function useLinkColor() {
   const route = useRoute()
-  let observer: IntersectionObserver | null = null
 
   // 传递一个dom数组 里面都是a标签
   function clickMatch(a: NodeListOf<HTMLAnchorElement>) {
     const hash = route.hash
-    a.forEach(item => {
-      if (item.getAttribute('href') == hash) {
-        item.classList.add('active')
-      } else {
-        item.classList.remove('active')
-      }
-    })
+    searchAnchorIndex(a, hash)
   }
 
   function scrollMatch(
     a: NodeListOf<HTMLAnchorElement>,
     h: NodeListOf<HTMLTitleElement>
   ) {
-    observer = new IntersectionObserver(
-      // 被监听的元素集合
-      entries => {
-        const visibleHeading = entries.find(entry => entry.isIntersecting)
-        if (visibleHeading) {
-          const id = visibleHeading.target.id
-          if (id) {
-            a.forEach(link => {
-              link.classList.remove('active')
-              if (link.getAttribute('href') === `#${id}`) {
-                link.classList.add('active')
-              }
-            })
-          }
-        }
-      },
-      {
-        rootMargin: '0px 0px -90% 0px',
-        threshold: 0
+    if (h.length === 0) return
+    let id = ''
+    for (const item of h) {
+      const rect = item.getBoundingClientRect()
+      // 判断标题是否在视口内（考虑固定头部）
+      const isInViewport =
+        Math.ceil(rect.top) >= headerOffset && rect.top <= window.innerHeight
+      if (isInViewport) {
+        id = item.id
+        break
       }
-    )
-    h.forEach(item => observer!.observe(item))
+    }
+    if (id) {
+      console.log(id)
+      searchAnchorIndex(a, `#${id}`)
+    } else {
+      // 找不到id说明当前视口没有标题，那么哪个标题高亮就需要具体判断一下
+      const scrollTop = window.scrollY
+      const headings = []
+      for (const item of h) {
+        headings.push({
+          id: item.id,
+          top: item.offsetTop
+        })
+      }
+      if (scrollTop < headings[0].top) {
+        return
+      }
+      for (let i = 0; i < headings.length - 1; i++) {
+        if (scrollTop > headings[i].top && scrollTop < headings[i + 1].top) {
+          id = headings[i].id
+          break
+        }
+      }
+      id = id == '' ? headings[headings.length - 1].id : id
+      searchAnchorIndex(a, `#${id}`)
+    }
   }
-
-  onUnmounted(() => {
-    observer?.disconnect()
-  })
   return {
     clickMatch,
     scrollMatch
   }
 }
 
+function searchAnchorIndex(a: NodeListOf<HTMLAnchorElement>, target: string) {
+  a.forEach(item => {
+    if (item.getAttribute('href') == target) {
+      item.classList.add('active')
+    } else {
+      item.classList.remove('active')
+    }
+  })
+}
 /**
- * 问题1：
- *      第一个标题已经滚了,这时候第二个标题如果不满足触发条件就不触发
+ * 问题
+ *    最底部的click高亮会被覆盖
  */
