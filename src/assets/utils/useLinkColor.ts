@@ -28,7 +28,6 @@ export default function useLinkColor() {
       }
     }
     if (id) {
-      console.log(id)
       searchAnchorIndex(a, `#${id}`)
     } else {
       // 找不到id说明当前视口没有标题，那么哪个标题高亮就需要具体判断一下
