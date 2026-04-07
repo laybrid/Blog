@@ -12,9 +12,10 @@
       class="max-md:hidden absolute top-3 right-3 bottom-3 rounded-xl bg-color-bg w-11 cursor-pointer flex justify-center items-center"
       @click="jump"
     >
-      <ChevronRightIcon
-        class="size-15 text-color-theme-d hover:text-color-theme"
-      ></ChevronRightIcon>
+      <FontAwesomeIcon
+        :icon="faChevronRight"
+        class="text-color-theme-d hover:text-color-theme size-11"
+      />
     </div>
   </div>
 </template>
@@ -22,7 +23,7 @@
 <script setup lang="ts">
 // ts 图片报错但是能引用
 import { useRouter } from 'vue-router'
-import { ChevronRightIcon } from '@heroicons/vue/24/solid'
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 const props = defineProps<{
   title?: string
   isJump?: boolean

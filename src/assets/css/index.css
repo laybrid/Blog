@@ -1,3 +1,6 @@
+.font {
+  font-size: 25px;
+}
 .btn-plain,
 .btn {
   display: flex;
@@ -79,7 +82,6 @@
   scrollbar-width: none;
   padding: 12px 12px;
   font-size: 14px;
-
 }
 .prose .table-of-contents ul {
   list-style: none;
@@ -103,7 +105,7 @@
   color: #e2e8f0;
   border-bottom: none;
 }
-.table-of-contents .active{
+.table-of-contents .active {
   color: #ffcd32;
 }
 @media (max-width: 1550px) {
@@ -115,4 +117,3 @@
 ::selection {
   background: #1b2642;
 }
-

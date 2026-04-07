@@ -7,7 +7,7 @@
       to="/"
     >
       <template #default>
-        <HomeIcon class="size-8 text-color-theme mr-2"></HomeIcon>
+        <FontAwesomeIcon :icon="faHouse" class="text-color-theme mr-2 size-7" />
         <span class="text-color-text-r font-bold">Chat</span>
       </template>
     </router-link>
@@ -26,11 +26,11 @@
       >
     </div>
     <div class="other opacity-0">
-      <SunIcon class="size-8"></SunIcon>
+      <FontAwesomeIcon :icon="faSun" class="text-color-theme size-7" />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { HomeIcon, SunIcon } from '@heroicons/vue/24/outline'
+import { faHouse, faSun } from '@fortawesome/free-regular-svg-icons'
 </script>
