@@ -21,7 +21,6 @@
 </template>
 
 <script setup lang="ts">
-// ts 图片报错但是能引用
 import { useRouter } from 'vue-router'
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 const props = defineProps<{

@@ -27,7 +27,6 @@ const { fixMarkdownImages } = useMdFileImg()
 const { clickMatch, scrollMatch } = useLinkColor()
 
 const blogContent = ref()
-const containerEl = ref()
 const prose = ref()
 let slug = route.params.slug || ''
 
@@ -56,11 +55,13 @@ onUnmounted(() => {
 
 watch(
   () => route.params,
-  async () => {
+  () => {
     slug = route.params.slug
-    blogContent.value = getSingleMdFileMeta(slug)
-    await nextTick()
-    fixMarkdownImages(containerEl.value)
+    const mdFile = getSingleMdFileMeta(slug)
+    blogContent.value = {
+      ...mdFile,
+      html: fixMarkdownImages(mdFile.html)
+    }
   },
   {
     immediate: true
@@ -70,8 +71,9 @@ watch(
   () => route.hash,
   async () => {
     await nextTick()
-    const a = document.querySelectorAll('.table-of-contents a')
-    const h = document.querySelectorAll('.prose h2,h3,h4')
+    const a: NodeListOf<HTMLAnchorElement> = document.querySelectorAll(
+      '.table-of-contents a'
+    )
     clickMatch(a)
   },
   {
