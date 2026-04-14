@@ -33,13 +33,14 @@ let slug = route.params.slug || ''
 // copy btn
 document.addEventListener('click', async e => {
   const el = e.target as HTMLElement | null
-  const btn = el?.closest?.('.code-copy-btn') as HTMLButtonElement | null
+  const btn = el?.closest?.('.code-copy-btn') as HTMLElement | null
   if (!btn) return
+  if (btn.timeout) clearTimeout(btn.timeout)
   const code = decodeURIComponent(btn.dataset.code || '')
   await navigator.clipboard.writeText(code)
-  const old = btn.textContent
-  btn.textContent = '√'
-  window.setTimeout(() => (btn.textContent = old || '复制'), 1200)
+  const old = btn.innerHTML
+  btn.innerHTML = '√'
+  btn.timeout = setTimeout(() => (btn.innerHTML = old || 'copy'), 1200)
 })
 
 onMounted(() => {
