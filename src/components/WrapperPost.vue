@@ -21,6 +21,11 @@ import useMdFiles from '@/assets/utils/useMdFile'
 import useMdFileImg from '@/assets/utils/useMdFileImg'
 import useLinkColor from '@/assets/utils/useLinkColor'
 
+interface CopyButton extends HTMLElement {
+  timeout: number | null
+  _originalHtml: string
+}
+
 const route = useRoute()
 const { getSingleMdFileMeta } = useMdFiles()
 const { fixMarkdownImages } = useMdFileImg()
@@ -33,14 +38,17 @@ let slug = route.params.slug || ''
 // copy btn
 document.addEventListener('click', async e => {
   const el = e.target as HTMLElement | null
-  const btn = el?.closest?.('.code-copy-btn') as HTMLElement | null
+  const btn = el?.closest?.('.code-copy-btn') as CopyButton | null
   if (!btn) return
   if (btn.timeout) clearTimeout(btn.timeout)
+  !btn._originalHtml && (btn._originalHtml = btn.innerHTML)
   const code = decodeURIComponent(btn.dataset.code || '')
   await navigator.clipboard.writeText(code)
-  const old = btn.innerHTML
   btn.innerHTML = '√'
-  btn.timeout = setTimeout(() => (btn.innerHTML = old || 'copy'), 1200)
+  btn.timeout = setTimeout(() => {
+    btn.innerHTML = btn._originalHtml
+    btn.timeout = null
+  }, 1200)
 })
 
 onMounted(() => {
